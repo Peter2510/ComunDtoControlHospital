@@ -13,13 +13,13 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.hospital</groupId>
-    <artifactId>DtoComunControlHospital</artifactId>
+    <groupId>com.example</groupId>
+    <artifactId>comun</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>DtoComun</name>
-    <description>DTOs entre microservicios</description>
+    <name>Comun</name>
+    <description>DTOs y utilidades compartidas entre microservicios</description>
 
     <properties>
         <java.version>21</java.version>
@@ -38,22 +38,26 @@
 
 
     <dependencies>
+        <!-- Dependencias mínimas para DTOs -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
 
+        <!-- Jackson -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
         </dependency>
 
+        <!-- Validaciones -->
         <dependency>
             <groupId>jakarta.validation</groupId>
             <artifactId>jakarta.validation-api</artifactId>
         </dependency>
 
+        <!-- Tests -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
