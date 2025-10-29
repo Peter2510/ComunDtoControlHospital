@@ -14,7 +14,4 @@ public class EnviarCorreoElectronicoDto {
     private String mensaje;
     private String encabezado;
     
-    public void mensaje(){
-        System.out.println("Mensaje enviado");
-    }
 }
