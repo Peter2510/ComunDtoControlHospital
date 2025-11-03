@@ -68,3 +68,17 @@ jobs:
             console.log(`Tag creado exitosamente: ${version}`);
         env:
           NEW_VERSION: ${{ steps.set_version.outputs.NEW_VERSION }}
+
+      - name: Create GitHub Release 🚀
+        if: success()
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.set_version.outputs.NEW_VERSION }}
+          name: Release ${{ steps.set_version.outputs.NEW_VERSION }}
+          body: |
+            Automated release for version ${{ steps.set_version.outputs.NEW_VERSION }}.
+            Built via GitHub Actions run ${{ github.run_number }}.
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
