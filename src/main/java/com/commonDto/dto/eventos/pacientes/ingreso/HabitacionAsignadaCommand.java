@@ -8,6 +8,6 @@ import java.util.UUID;
 @AllArgsConstructor
 @Getter
 public class HabitacionAsignadaCommand {
-    private final UUID habitacionId;
-    private final String pacienteCui;
+    private UUID habitacionId;
+    private String pacienteCui;
 }

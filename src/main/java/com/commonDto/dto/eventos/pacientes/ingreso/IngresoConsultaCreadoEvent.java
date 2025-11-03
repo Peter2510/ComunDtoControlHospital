@@ -8,7 +8,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Getter
 public class IngresoConsultaCreadoEvent {
-    private final UUID ingresoId;
-    private final String pacienteCui;
-    private final String medicoCui;
+    private UUID ingresoId;
+    private String pacienteCui;
+    private String medicoCui;
 }
