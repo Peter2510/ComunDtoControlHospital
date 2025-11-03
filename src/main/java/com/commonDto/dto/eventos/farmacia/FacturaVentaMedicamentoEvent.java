@@ -12,6 +12,7 @@ import java.util.UUID;
 @Getter
 public class FacturaVentaMedicamentoEvent {
 
+    private UUID id;
     private UUID compraId;
     private String usuarioCui;
     private String nombreUsuario;
