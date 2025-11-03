@@ -9,14 +9,12 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     
-    # IMPORTANTE: Se necesitan permisos de escritura para crear el tag
     permissions:
       contents: write 
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        # Necesario para que el paso de tagging funcione, ya que crea el tag en el HEAD
         with:
           fetch-depth: 0 
 
@@ -38,16 +36,11 @@ jobs:
                       </server>
                     </servers>
                   </settings>" > $HOME/.m2/settings.xml
-
-      ---
       
-      # Paso 1: Define la versión sin el sufijo -SNAPSHOT y guárdala para usarla después
       - name: Set Dynamic Version Variable
         id: set_version
         run: echo "NEW_VERSION=1.0.${{ github.run_number }}" >> $GITHUB_OUTPUT
 
-      # Paso 2: Construye y despliega usando la nueva versión dinámica.
-      # Usamos el plugin 'versions:set' para modificar el pom.xml temporalmente en el runner.
       - name: Build and Deploy (with NEW_VERSION)
         working-directory: ./
         run: | 
@@ -56,9 +49,6 @@ jobs:
           mvn versions:set -DnewVersion=$VERSION
           mvn clean deploy -DskipTests
       
-      ---
-
-      # Paso 3: Crea el Tag en GitHub. Esto solo se ejecuta si la construcción es exitosa.
       - name: Create and Push Git Tag
         if: success()
         uses: actions/github-script@v6
