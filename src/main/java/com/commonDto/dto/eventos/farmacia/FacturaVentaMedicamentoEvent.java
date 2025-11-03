@@ -6,6 +6,7 @@ import lombok.Getter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @AllArgsConstructor
@@ -18,7 +19,8 @@ public class FacturaVentaMedicamentoEvent {
     private String nombreUsuario;
     private String pacienteCui;
     private String pacienteNombre;
-    private BigDecimal total;
+    private Double total;
     private LocalDateTime fechaCompra;
+    private List<DetalleTransaccionDto> detalles;
 
 }
