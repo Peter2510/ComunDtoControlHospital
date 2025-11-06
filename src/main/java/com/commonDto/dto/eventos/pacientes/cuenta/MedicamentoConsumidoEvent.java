@@ -1,19 +1,20 @@
 package com.commonDto.dto.eventos.pacientes.cuenta;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-public class MedicamentoConsumidoEvent {
-    private UUID medicamentoId;
-    private int cantidadConsumida;
-    private UUID ingresoId;
-    private LocalDateTime fechaConsumo;
+@Value
+public class MedicamentoConsumidoEvent implements Serializable {
+    UUID cuentaId;
+    UUID medicamentoId;
+    String nombreMedicamento;
+    Integer cantidad;
+    BigDecimal costoUnitario;
+    LocalDateTime fechaConsumo;
+    String pacienteCui;
+    UUID ingresoId;
 }

@@ -2,19 +2,22 @@ package com.commonDto.dto.eventos.farmacia;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Value;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @AllArgsConstructor
 @Getter
-public class MedicamentoComprado implements Serializable {
+public class MedicamentoCompradoEvent implements Serializable {
     UUID compraId;
     UUID medicamentoId;
+    String nombreMedicamento;
     Integer cantidad;
-    Double precioUnitario;
+    BigDecimal precioUnitario;
     LocalDateTime fechaCompra;
     String proveedor;
+    String empleadoCui;
+    String empleadoNombre;
 }
