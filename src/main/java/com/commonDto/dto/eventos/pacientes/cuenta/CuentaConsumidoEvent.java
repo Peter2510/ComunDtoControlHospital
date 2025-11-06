@@ -8,13 +8,18 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Value
-public class MedicamentoConsumidoEvent implements Serializable {
+public class CuentaConsumidoEvent implements Serializable {
     UUID cuentaId;
     UUID medicamentoId;
     String nombreMedicamento;
+    UUID tarifarioId;
+    String nombreTarifario;
     Integer cantidad;
     BigDecimal costoUnitario;
     LocalDateTime fechaConsumo;
     String pacienteCui;
+    String pacienteNombre;
     UUID ingresoId;
+    String medicoCui;
+    String medicoNombre;
 }

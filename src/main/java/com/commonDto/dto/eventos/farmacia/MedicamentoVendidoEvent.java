@@ -20,4 +20,5 @@ public class MedicamentoVendidoEvent implements Serializable {
     String empleadoCui;
     String empleadoNombre;
     String pacienteCui;
+    String pacienteNombre;
 }
