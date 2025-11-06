@@ -11,10 +11,13 @@ import java.util.UUID;
 @Getter
 @Setter
 public class DetalleFacturaDto {
-    private final UUID detalleId;
-    private final String descripcion;
-    private final BigDecimal costoUnitario;
-    private final int cantidad;
-    private final BigDecimal subtotal;
+    private  UUID detalleId;
+    private  String descripcion;
+    private  BigDecimal costoUnitario;
+    private  int cantidad;
+    private  BigDecimal subtotal;
+
+    private UUID medicamentoId;
+    private UUID tarifarioId;
 
 }
